@@ -1,0 +1,165 @@
+ @font-face{
+        src: url(../fonts/Helvetica.ttf);
+        font-family:hel;
+    }
+ @font-face{
+        src: url(../fonts/LemonMilk.otf);
+        font-family:lem;
+    }
+body{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #161623;
+  min-height: 100vh;
+}
+.container
+{
+    padding: 15px;
+    position: relative;
+  z-index: 1;
+}
+#chatui
+    {
+        position: fixed;
+        background-size: cover;
+        bottom: 0px;
+        left: 0px;
+        padding: 15px;
+        /* border: 10px #4B0082 solid; */
+        width: 100%;
+        max-width:  100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00, #f0f);
+    clip-path: circle(30% at right 70%);
+  }
+  section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(20% at 10% 70%);
+  }
+*{
+    font-family: hel;
+}
+   
+
+    #chatui #message{
+        width: 70%;
+        height: 40px;
+        border-radius: 40px;
+        transition: 0.4s ease;
+    }
+    #chatui #messages{
+        display: flex;
+        flex-direction: column;
+        color: aliceblue;
+        height: 80%;
+        overflow-y: auto;
+    }
+    #chatui #message:hover{
+        border: 2px solid rgba(0,0,0,0.5);
+        box-shadow: 1px 1px 8px 2px rgba(0,0,0,0.7);
+    }
+    #chatui #sub{
+        height: 40px;
+        margin-left: 15px;
+        color:#fff;
+        background: #E1332D;
+        cursor: pointer;
+        width: 80px;
+        border: 0 solid;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+        outline: 1px solid;
+        outline-color: rgba(255, 255, 255, .5);
+        outline-offset: 0px;
+        text-shadow: none;
+        transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    #chatui #sub:hover{
+        border: 1px solid;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+        outline-color: rgba(255, 255, 255, 0);
+        outline-offset: 15px;
+        text-shadow: 1px 1px 2px #427388;  
+    }
+      
+    #messages div{
+        padding: 11px;
+        background: rgba(0,0,0,0.85);
+        border-radius: 10px;
+        width: 40%;
+        height: auto;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        text-align: left;
+        word-wrap: break-word;
+    }
+#messages div span{
+    font-family: lem;
+}
+#form-div{
+    height: 18%;
+    max-height: 18%;
+    position: absolute;
+    padding: 10px;
+    bottom: 0%;
+    width: 100%;
+    margin-top: 10px;
+}
+    form{
+        display: flex;
+        flex-direction: row;
+    }
+    form input:nth-child(1){
+        margin-right: 8px;
+        border-radius: 3px;
+    }
+p
+{
+    padding: 2px 4px;
+    text-align: center;
+    width: 80px;
+    background: #D90429;
+    border-radius: 3px;
+}
+@media(max-width:800px)
+{
+    p
+    {
+        width: 70px;
+    }
+    #messages div
+    {
+        width: auto;
+        max-width: 75%;
+        font-size: 1.25em;
+        border-radius: 10px;
+        line-height: 1;
+    }
+    #messages div span
+    {
+        font-size: 0.55em;
+        font-weight: 700;
+        margin-right: 7px;
+        margin-bottom: 9px;
+    }
+}
