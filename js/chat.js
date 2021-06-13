@@ -3,13 +3,10 @@ var email,uid,uname;
 firebase.auth().onAuthStateChanged(function(user) { 
  
     if(user){
-  console.log(user.email)
-  email=user.email;
-  uid=user.uid;
-  var cliref = firebase.database().ref('crimecredential/');
-    cliref.orderByChild("email").equalTo(user.email).on("child_added", function(data){
-        uname=data.val().name;
-    });        
+  
+  email=sessionStorage.getItem('chatemail');
+  uid=sessionStorage.getItem('chatuid');
+  uname=sessionStorage.getItem('chatname');
  }
      
      else{
@@ -36,8 +33,8 @@ firebase.auth().onAuthStateChanged(function(user) {
             return false;
         }
     // listen for incoming messages
-        firebase.database().ref("chats/").on("child_added", function (snapshot) {
-            console.log("heyyy");
+        firebase.database().ref("chats/"+uid).on("child_added", function (snapshot) {
+    
             var html = "";
             // give each message a unique ID
             if (snapshot.val().sender != uname)
