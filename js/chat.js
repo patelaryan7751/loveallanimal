@@ -26,15 +26,28 @@ firebase.auth().onAuthStateChanged(function(user) {
                 "message": message,
                 "time": time
             });
-            document.getElementById("message").value="";
+            var html = "";
+            // give each message a unique ID
+            // show delete button if message is sent by me
+                html += "<div class='message' style='align-self:flex-end;background-color:#019850;color:#fff;margin-right:8px;'>";
+                
+            
+            html += "<span>"+uname + " :</span> <br>" + message;
+            html += "</div>";
+
+            html +="<p style='align-self:flex-end;margin-right:8px;'>"+time + "</p>";
+
+            document.getElementById("messages").innerHTML += html;
             var element = document.getElementById("messages");
             element.scrollTop = element.scrollHeight - element.clientHeight;
+            document.getElementById("message").value="";
+            
             // prevent form from submitting
             return false;
         }
     // listen for incoming messages
         firebase.database().ref("chats/"+uid).on("child_added", function (snapshot) {
-    
+            console.log(snapshot.val());
             var html = "";
             // give each message a unique ID
             if (snapshot.val().sender != uname)
