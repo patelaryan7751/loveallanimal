@@ -18,7 +18,7 @@ console.log(newVoke.admin)
 sessionStorage.setItem("chatuid",newVoke.uid)
 sessionStorage.setItem("chatname",newVoke.name)
 sessionStorage.setItem("chatemail",newVoke.email)
-if(newVoke.admin=="true"){
+if(newVoke.admin=="false"){
 window.open('admin.html','_self');
 }
 
@@ -36,7 +36,7 @@ document.querySelector("#avtimg").innerHTML=`<img src="https://ui-avatars.com/ap
 }
 
 else{
-window.open('login/index.html','_self');
+window.open('https://patelaryan7751.github.io/loveallanimal/','_self');
 }
 
 
