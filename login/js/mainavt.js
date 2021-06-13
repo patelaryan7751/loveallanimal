@@ -36,7 +36,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 }
     
     else{
-      window.open('https://patelaryan7751.github.io/loveallanimal/','_self');
+      window.open('https://patelaryan7751.github.io/loveallanimal/login/index.html','_self');
     }
     
     
