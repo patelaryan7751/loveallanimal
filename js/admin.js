@@ -19,7 +19,7 @@ sessionStorage.setItem("chatuid",newVoke.uid)
 sessionStorage.setItem("chatname",newVoke.name)
 sessionStorage.setItem("chatemail",newVoke.email)
 if(newVoke.admin=="false"){
-window.open('admin.html','_self');
+window.open('index.html','_self');
 }
 
 var first= newVoke.name.split(" ");
