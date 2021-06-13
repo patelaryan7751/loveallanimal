@@ -18,45 +18,36 @@
 <body>
 
     <section>
-        <div class="container">
-            <div class="card">
-                <div class="content">
-                    <div class="form">
-                        <div class="avatar">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="">
-                            <div class="user">
-                                <h3>Carolos Jinx</h3>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="imgBx"><img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
-                        <p>The dog is one of the most popular pets in the world, and we love the dog very much</p>
-                        <hr>
-                        <div class="heart">
-                            <i onclick="toggle();" class="far fa-heart" id="btn"></i>
-                        </div>
-                    </div>
-                </div>
+
+        <nav class="navbar fixed-top navbar-expand-lg  navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a id="avtimg" class="navbar-brand" href="../index.html">
+                  
+              </a>
+             
+                <ul class="navbar-nav ml-auto">
+                    
+                  <li class="nav-item">
+                    <a class="nav-link active" style="cursor: pointer" aria-current="page" id="mchn">Logout</a>
+                      
+                  </li>
+                     
+                </ul>
+              
             </div>
-            <div class="card">
-                <div class="content">
-                    <div class="form">
-                        <div class="avatar">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="">
-                            <div class="user">
-                                <h3>Carolos Jinx</h3>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="imgBx"><img src="https://images.pexels.com/photos/2023384/pexels-photo-2023384.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
-                        <p>The dog is one of the most popular pets in the world, and we love the dog very much</p>
-                        <hr>
-                        <div class="heart">
-                            <i onclick="toggle();" class="far fa-heart" id="btn"></i>
-                        </div>
-                    </div>
-                </div>
+          </nav>
+          <br>
+    
+        <div class="container" id="rescuepost">
+        </div>
+        <div class="container" id="loader" >
+            <center>    <img src="../img/throbber_13.gif" class="img-fluid" width="50px" height="50px"> </center>
             </div>
+
+        <div class="add">
+            <a href="communitypost.html">
+            <i class="fas fa-plus"></i>
+            </a>
         </div>
     </section>
 
@@ -71,16 +62,17 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
 
-    <script>
-        var btn = document.getElementById("btn");
+    
 
-        function toggle(){
-            if(btn.classList.contains("far")){
-            btn.classList.remove("far");
-            btn.classList.add("fas");
-            }
-        }
-    </script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+<!--===============================================================================================-->
+<script src="../login/js/config.js"></script>
+<script src="../login/js/mainavt.js"></script>
+<script src="./communitypost.js"></script>
 
 </body>
 
